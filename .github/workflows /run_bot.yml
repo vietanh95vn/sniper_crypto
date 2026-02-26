@@ -1,4 +1,4 @@
-name: python sniper_crypto Daily Run
+name: sniper_crypto Daily Run
 
 on:
   schedule:
@@ -23,7 +23,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 4. Kích hoạt Cỗ máy Kinh doanh (Run Script)
-        run: sniper_crypto.py
+        run: python sniper_crypto.py
         env: # Truyền mật mã từ Két sắt (Secrets) vào Biến Môi trường!
           TOKEN_TELEGRAM: ${{ secrets.TOKEN_TELEGRAM }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
