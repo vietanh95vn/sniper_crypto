@@ -2,7 +2,7 @@ import requests
 
 import pandas as pd
 
-
+import os
 
 
 
@@ -12,11 +12,11 @@ def send_telegram_alert(msg):
 
    
 
-    TOKEN = "8705662844:AAHRGds6BPNCVUPEtjj1MVc-My0jQf7yfu8" #token bot telegram
+    TOKEN = os.environ.get("TOKEN_TELEGRAM") #token bot telegram
 
    
 
-    CHAT_ID = "6297429333" # ID main account telegram
+    CHAT_ID = os.environ.get("CHAT_ID") # ID main account telegram
 
    
 
@@ -129,5 +129,6 @@ if __name__ == "__main__": # Logic command center
                 send_telegram_alert(warning_msg)
 
         else:
+
 
             print("skip it , hold ")
