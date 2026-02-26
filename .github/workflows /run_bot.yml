@@ -25,5 +25,5 @@ jobs:
       - name: 4. Kích hoạt Cỗ máy Kinh doanh (Run Script)
         run: sniper_crypto.py
         env: # Truyền mật mã từ Két sắt (Secrets) vào Biến Môi trường!
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOKEN_TELEGRAM: ${{ secrets.TOKEN_TELEGRAM }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
