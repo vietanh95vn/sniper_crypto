@@ -1,0 +1,29 @@
+name: sniper_crypto Daily Run
+
+on:
+  schedule:
+    # Đồng hồ kích hoạt lúc 01:00 UTC (Tương đương 8h sáng giờ Việt Nam)
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Cho phép bấm nút chạy bằng tay ngay lập tức để test!
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Xin Microsoft một cái máy chủ Linux mới tinh
+
+    steps:
+      - name: 1. Lấy mã nguồn từ Kho chứa (Checkout)
+        uses: actions/checkout@v3
+
+      - name: 2. Lắp ráp Môi trường Python (Setup Python)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 3. Đọc đơn cấp phát và Cài đặt vũ khí (Install Requirements)
+        run: pip install -r requirements.txt
+
+      - name: 4. Kích hoạt Cỗ máy Kinh doanh (Run Script)
+        run: python sniper_crypto.py
+        env: # Truyền mật mã từ Két sắt (Secrets) vào Biến Môi trường!
+          TOKEN_TELEGRAM: ${{ secrets.TOKEN_TELEGRAM }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
