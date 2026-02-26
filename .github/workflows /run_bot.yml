@@ -1,4 +1,4 @@
-name: sniper_crypto Daily Run
+name: python sniper_crypto Daily Run
 
 on:
   schedule:
