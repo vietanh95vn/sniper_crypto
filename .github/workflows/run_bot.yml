@@ -1,6 +1,6 @@
 name: sniper_crypto Daily Run
 
-on:
+off:
   schedule:
     # Đồng hồ kích hoạt lúc 01:00 UTC (Tương đương 8h sáng giờ Việt Nam)
     - cron: '0 1 * * *'
