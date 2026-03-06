@@ -12,11 +12,11 @@ def send_telegram_alert(msg):
 
    
 
-    TOKEN = os.environ.get("TOKEN_TELEGRAM") #token bot telegram
+    TOKEN = os.environ.get("") #token bot telegram
 
    
 
-    CHAT_ID = os.environ.get("CHAT_ID") # ID main account telegram
+    CHAT_ID = os.environ.get("") # ID main account telegram
 
    
 
@@ -132,3 +132,4 @@ if __name__ == "__main__": # Logic command center
 
 
             print("skip it , hold ")
+
